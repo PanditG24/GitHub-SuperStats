@@ -1,57 +1,139 @@
-<!-- Updated landing.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>GitHub SuperStats - Free Chrome Extension</title>
+  <meta name="description" content="See your GitHub repository's estimated value and monetization potential">
   <style>
-    /* ... existing styles ... */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #0d1117;
+      color: #c9d1d9;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #3fb950;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1.1em;
+      margin: 20px 0;
+      transition: background-color 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .cta-button:hover {
+      background-color: #2ea043;
+      transform: translateY(-2px);
+    }
+    .screenshot {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+      margin: 25px 0;
+    }
     .steps {
       background: #161b22;
-      padding: 15px;
+      padding: 20px;
       border-radius: 8px;
-      margin: 20px 0;
+      margin: 30px 0;
     }
     code {
       background: #30363d;
-      padding: 2px 5px;
+      padding: 2px 6px;
       border-radius: 4px;
+      font-family: monospace;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .feature-card {
+      background: #161b22;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #8b949e;
+    }
+    .kofi-link {
+      color: #ff5a5f;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>GitHub SuperStats</h1>
-  <p>Unlock repository monetization insights - 100% FREE</p>
-  
-  <a href="https://github.com/PanditG24/GitHub-SuperStats/releases/download/v1.0.0/github-superstats.zip" 
-     class="cta-button">
-     Download Extension
-  </a>
-  
+  <header>
+    <h1>GitHub SuperStats</h1>
+    <p>Unlock your repository's monetization potential with one click</p>
+    <a href="https://github.com/PanditG24/GitHub-SuperStats/releases/download/v1.0.0/github-superstats.zip" 
+       class="cta-button">
+       Download Free Extension
+    </a>
+  </header>
+
+  <img src="https://i.imgur.com/gFyXJ3n.png" alt="GitHub SuperStats in action" class="screenshot">
+
+  <div class="features">
+    <div class="feature-card">
+      <h3>💰 Value Estimation</h3>
+      <p>See your repository's potential monetary value based on stars and forks</p>
+    </div>
+    <div class="feature-card">
+      <h3>⏱️ Maintenance Insights</h3>
+      <p>Estimate monthly maintenance effort for your projects</p>
+    </div>
+    <div class="feature-card">
+      <h3>📦 Dependency Analysis</h3>
+      <p>Quickly see dependency counts and potential risks</p>
+    </div>
+  </div>
+
   <div class="steps">
-    <h3>Installation Guide</h3>
+    <h2>Installation Guide</h2>
     <ol>
       <li>Download the ZIP file above</li>
-      <li>Unzip it to a folder</li>
+      <li>Unzip it to a folder on your computer</li>
       <li>Open Chrome and go to <code>chrome://extensions</code></li>
-      <li>Enable <strong>Developer mode</strong> (top-right toggle)</li>
+      <li>Enable <strong>Developer mode</strong> (toggle in top-right corner)</li>
       <li>Click <strong>Load unpacked</strong></li>
       <li>Select the unzipped folder</li>
+      <li>Visit any GitHub repository to see insights!</li>
     </ol>
   </div>
-  
-  <div class="creator">
-    Created by Trust Niroula | 
-    <a href="https://ko-fi.com/trustniroula" style="color: #ff5a5f;">Support this project</a>
-  </div>
-  
+
+  <footer>
+    <p>Created with ❤️ by Trust Niroula</p>
+    <p>
+      Support this project: 
+      <a href="https://ko-fi.com/trustniroula" class="kofi-link">Buy me a coffee on Ko-fi</a>
+    </p>
+    <p>Have questions? 
+      <a href="https://github.com/PanditG24/GitHub-SuperStats/issues" class="kofi-link">Open an issue</a>
+    </p>
+  </footer>
+
   <script>
-    // Auto-update download link
-    const downloadBtn = document.querySelector('.cta-button');
-    downloadBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('Thank you for downloading! After unzipping, follow the installation steps.');
-      window.location.href = this.href;
+    // Simple download confirmation
+    document.querySelector('.cta-button').addEventListener('click', function(e) {
+      if(!confirm('After downloading, please follow the installation steps below. Ready to download?')) {
+        e.preventDefault();
+      }
     });
   </script>
 </body>
