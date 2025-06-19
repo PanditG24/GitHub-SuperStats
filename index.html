@@ -1,0 +1,58 @@
+<!-- Updated landing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub SuperStats - Free Chrome Extension</title>
+  <style>
+    /* ... existing styles ... */
+    .steps {
+      background: #161b22;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    code {
+      background: #30363d;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>GitHub SuperStats</h1>
+  <p>Unlock repository monetization insights - 100% FREE</p>
+  
+  <a href="https://github.com/PanditG24/GitHub-SuperStats/releases/download/v1.0.0/github-superstats.zip" 
+     class="cta-button">
+     Download Extension
+  </a>
+  
+  <div class="steps">
+    <h3>Installation Guide</h3>
+    <ol>
+      <li>Download the ZIP file above</li>
+      <li>Unzip it to a folder</li>
+      <li>Open Chrome and go to <code>chrome://extensions</code></li>
+      <li>Enable <strong>Developer mode</strong> (top-right toggle)</li>
+      <li>Click <strong>Load unpacked</strong></li>
+      <li>Select the unzipped folder</li>
+    </ol>
+  </div>
+  
+  <div class="creator">
+    Created by Trust Niroula | 
+    <a href="https://ko-fi.com/trustniroula" style="color: #ff5a5f;">Support this project</a>
+  </div>
+  
+  <script>
+    // Auto-update download link
+    const downloadBtn = document.querySelector('.cta-button');
+    downloadBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Thank you for downloading! After unzipping, follow the installation steps.');
+      window.location.href = this.href;
+    });
+  </script>
+</body>
+</html>
